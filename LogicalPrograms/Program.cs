@@ -10,19 +10,30 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            FibonacciSeries();
+            perfectNumber();
         }
-        public static void FibonacciSeries()
+        public static void perfectNumber()
         {
-            int n1 = 0, n2 = 1, n3, num = 5;
-            Console.WriteLine(n1 + " " + n2);
-
-            for (int i = 2; i < num; ++i)
+            int number, sum = 0, n;
+            Console.Write("enter the Number");
+            number = int.Parse(Console.ReadLine());
+            n = number;
+            for (int i = 1; i < number; i++)
             {
-                n3 = n1 + n2;
-                Console.WriteLine("print the fibonnaci number :" + n3);
-                n1 = n2;
-                n2 = n3;
+                if (number % i == 0)
+                {
+                    sum = sum + i;
+                }
+            }
+            if (sum == n)
+            {
+                Console.WriteLine("\n Entered number is a perfect number");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("\n Entered number is not a perfect number");
+                Console.ReadLine();
             }
 
 
