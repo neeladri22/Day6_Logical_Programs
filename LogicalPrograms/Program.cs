@@ -10,30 +10,20 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            primeNumber();
+            reverseNumber();
         }
-        public static void primeNumber()
+        public static void reverseNumber()
         {
-            Console.Write("Enter a Number : ");
-            int number1 = int.Parse(Console.ReadLine());
-            bool IsPrime = true;
-            for (int i = 2; i < number1 / 2; i++)
+            int revnum, reverse = 0, rem;
+            Console.Write("Enter a number: ");
+            revnum = int.Parse(Console.ReadLine());
+            while (revnum != 0)
             {
-                if (number1 % i == 0)
-                {
-                    IsPrime = false;
-                    break;
-                }
+                rem = revnum % 10;
+                reverse = reverse * 10 + rem;
+                revnum /= 10;
             }
-            if (IsPrime)
-            {
-                Console.Write("Number is Prime.");
-            }
-            else
-            {
-                Console.Write("Number is not Prime.");
-            }
-
+            Console.Write("Reversed Number: " + reverse);
 
 
 
