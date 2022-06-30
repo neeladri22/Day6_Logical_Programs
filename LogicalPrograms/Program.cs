@@ -8,19 +8,19 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            StartAndStopWatch();
+            couponNumbers();
         }
-        public static void StartAndStopWatch()
+        public static void couponNumbers()
         {
-            Stopwatch stopW = new Stopwatch();
-            stopW.Start();
-            Thread.Sleep(1000);
-            stopW.Stop();
-            TimeSpan tspan = stopW.Elapsed;
-            string elapsedTime = String.Format(" {0:00}:{1:00}:{2:00}.{3:00} ",
-            tspan.Hours, tspan.Minutes, tspan.Seconds, tspan.Milliseconds / 10);
-            Console.WriteLine(" RunTime " + elapsedTime);
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[6];
+            var random = new Random();
 
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            Console.WriteLine(stringChars);
 
         }
     }
