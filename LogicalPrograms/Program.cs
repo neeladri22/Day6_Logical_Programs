@@ -10,6 +10,7 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to logical program");
         }
     }
 }
