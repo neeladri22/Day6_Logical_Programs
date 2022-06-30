@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 
 namespace LogicalPrograms
 {
@@ -10,23 +8,18 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            reverseNumber();
+            StartAndStopWatch();
         }
-        public static void reverseNumber()
+        public static void StartAndStopWatch()
         {
-            int revnum, reverse = 0, rem;
-            Console.Write("Enter a number: ");
-            revnum = int.Parse(Console.ReadLine());
-            while (revnum != 0)
-            {
-                rem = revnum % 10;
-                reverse = reverse * 10 + rem;
-                revnum /= 10;
-            }
-            Console.Write("Reversed Number: " + reverse);
-
-
-
+            Stopwatch stopW = new Stopwatch();
+            stopW.Start();
+            Thread.Sleep(1000);
+            stopW.Stop();
+            TimeSpan tspan = stopW.Elapsed;
+            string elapsedTime = String.Format(" {0:00}:{1:00}:{2:00}.{3:00} ",
+            tspan.Hours, tspan.Minutes, tspan.Seconds, tspan.Milliseconds / 10);
+            Console.WriteLine(" RunTime " + elapsedTime);
 
 
         }
